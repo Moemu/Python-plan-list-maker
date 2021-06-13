@@ -4,7 +4,7 @@
 
 Planning list making是基于Python的免费开源软件，其作用是制作一个精简的计划清单，如图所示：
 
-![image-20210606111548258](C:\Users\28734\AppData\Roaming\Typora\typora-user-images\image-20210606111548258.png)
+![Planpaper](https://cdn.jsdelivr.net/gh/WhitemuTeam/web-img/planpaper.png)
 
 该Planning list包含：
 
@@ -149,7 +149,7 @@ num=int(random.randint(1,11)) #依据句子数量更改，当句子数量为20�
 
 以下是我本人使用Planning list making制作的计划书：
 
-![image-20210606104927589](C:\Users\28734\AppData\Roaming\Typora\typora-user-images\image-20210606104927589.png)
+![image-20210606104927589](https://cdn.jsdelivr.net/gh/WhitemuTeam/web-img/realplanpaper.jpg)
 
 为了更适应学业，我对making.py做了一些修改：
 
@@ -200,4 +200,4 @@ Planning list making Ver: 1.0(beta)
 
 作者:White_mu
 
-本作品遵守CC 4.0协议，未经许可严禁转载
+本作品遵守Apache 2.0协议，未经许可严禁转载

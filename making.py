@@ -1,9 +1,11 @@
+# -*- coding : utf-8-*-
 week=0 #初始化
 from sen import sen #导入sen（外部句子）函数
 #介绍
 print('欢迎使用Plan list making！') 
 print('当前版本V2.0')
 print('作者:White_mu Github:@WhitemuTeam')
+print('若想自定义计划清单的标题请使用makingpro.exe')
 doc=open('weekplan.md','w')
 #开始
 t=int(input('请输入需要制作的计划清单数量：'))

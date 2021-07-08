@@ -1,8 +1,8 @@
-# Planning list making
+# Plan list maker
 
 ## 介绍
 
-Planning list making是基于Python的免费开源软件，其作用是制作一个精简的计划清单，如图所示：
+Plan list maker是基于Python的免费开源软件，其作用是制作一个精简的计划清单，如图所示：
 
 ![Planpaper](https://cdn.jsdelivr.net/gh/WhitemuTeam/web-img/planpaper.png)
 
@@ -56,6 +56,30 @@ print('# **□** **19. _________________________________________________________
 ```
 
 用Markdown编辑器打开weekplan.md（例如：Typora，玩Github的应该人手一个Markdown编辑器吧）并打开源代码模式，粘贴刚才复制的内容，在顶部菜单栏依次点击文件>打印，打印即可（建议先用Microsoft Print to PDF预览一下，以免出现不必要的麻烦）
+
+## 修改：
+
+计划清单的标题可修改，默认是Week
+
+1.你可以在making.py修改，修改以下内容：
+
+```python
+print('# Week ',week,file=doc) #标题（默认为Week，可更改为Day，例如:'#Day ',week）
+```
+
+修改# week即可，例：
+
+```python
+print('# Day ',week,file=doc) #标题（默认为Week，可更改为Day，例如:'#Day ',week）
+```
+
+2.你可以通过makingpro.exe修改：
+
+打开makingpro.exe：
+
+它会提示您修改标题，输入你想要修改的标题（例: Day）即可。
+
+注意：无论是输入什么，后面总会显示数量，要移除请自行修改making.py
 
 ## 句子（sen.py）
 

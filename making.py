@@ -1,18 +1,31 @@
 # -*- coding : utf-8-*-
-week=0 #初始化
-from sen import sen #导入sen（外部句子）函数
+#初始化
+week=0
+
+#自定义文本句子获取(sen.txt)
+#取自issue #1(By AdminWhaleFall)
+
+def txt():
+    import random
+    with open('sen.txt', 'r' , encoding='utf8') as f:
+        datas = f.readlines()
+        data  =  random.choice(datas)
+    if data.strip() == '':
+        txt()
+    else:
+        return data.strip() 
+
 #介绍
 print('欢迎使用Plan list making！') 
-print('当前版本V2.0')
+print('当前版本V3.0')
 print('作者:White_mu Github:@WhitemuTeam')
-print('若想自定义计划清单的标题请使用makingpro.exe')
 doc=open('weekplan.md','w')
 #开始
-t=int(input('请输入需要制作的计划清单数量：'))
+t=int(input('请输入需要制作的计划清单页数：'))
 #导出
 while (t > 0):
     week=week+1
-    sens=sen() #从sen中获取句子
+    sens=txt() #从sen.txt中获取句子
     print('# Week ',week,file=doc) #标题（默认为Week，可更改为Day，例如:'#Day ',week）
     print(sens,file=doc) #引用句子
     print('# **□** **1. _______________________________________________________________________________________________________________________________**',file=doc)

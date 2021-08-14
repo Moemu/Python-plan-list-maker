@@ -1,20 +1,73 @@
-week=0 #初始化
-from sen import sen #导入sen（外部句子）函数
-#介绍
-print('欢迎使用Plan list making！') 
-print('当前版本V2.0(pro)')
-print('作者:White_mu Github:@WhitemuTeam')
-print('请输入自定义标题，输入格式参阅readme.md')
-tit=input()
+#By WhitemuTeam
+#Ver: 3.0(Pro)
+#初始化
+week=0 
+import PySimpleGUI as sg
+
+#一言句子获取（随机分类）
+def hitokoto():
+    import requests as r
+    try:
+        web=r.get('https://v1.hitokoto.cn/?encode=text')
+        web.encoding='utf-8'
+        sen=web.text
+        return sen
+    except:
+        sg.popup('请检查您的网络设置，如是否启用代理，如开启，请将其关闭')
+        exit()
+
+#自定义文本句子获取(sen.txt)
+#取自issue #1(By AdminWhaleFall)
+
+def txt():
+    import random
+    with open('sen.txt', 'r' , encoding='utf8') as f:
+        datas = f.readlines()
+        data  =  random.choice(datas)
+    if data.strip() == '':
+        txt()
+    else:
+        return data.strip() 
+      
+if __name__ == '__main__':
+        sen = txt()
+
+sg.theme('SystemDefaultForReal') #这是PysimpleGUI的主题之一，如果您不喜欢此主题，请参阅 https://blog.csdn.net/gainiu/article/details/113808314 查看其他主题
+
+#GUI界面配置
+layout=[[sg.Text('1*.请输入自定义标题，输入格式参阅readme.md(不填为Week)')],
+        [sg.Input()],
+        [sg.Text('2.请输入页数(必填)')],
+        [sg.Input()],
+        [sg.Text('3.请选择句子获取方式')],
+        [sg.Radio('一言API', group_id=1),
+        sg.Radio('自定义句子(sen.txt)', group_id=1)],
+        [sg.Button('提交')]]
+
+event,value=sg.Window('Plan list making(GUI)').Layout(layout).Read() #启动GUI并获取值
+
+#获取标题
+tit=value[0]
+if tit=='':
+    tit='Week'
+
+#获取制作数量
+page=int(value[1])
+
+#读取句子获取方法
+way=value[2]
+
+#创建weekplan.md
 doc=open('weekplan.md','w')
-#开始
-t=int(input('请输入需要制作的计划清单数量：'))
 #导出
-while (t > 0):
+while (page > 0):
     week=week+1
-    sens=sen() #从sen中获取句子
+    if way==True:
+        sen=hitokoto()
+    else:
+        sen=txt()
     print('# ',tit ,week,file=doc) #标题（默认为Week，可更改为Day，例如:'#Day ',week）
-    print(sens,file=doc) #引用句子
+    print(sen,file=doc) #引用句子
     print('# **□** **1. _______________________________________________________________________________________________________________________________**',file=doc)
     print('# **□** **2. _______________________________________________________________________________________________________________________________**',file=doc)
     print('# **□** **3. _______________________________________________________________________________________________________________________________**',file=doc)
@@ -35,8 +88,8 @@ while (t > 0):
     print('# **________________________________________________________________________________________________________________________________________________**',file=doc)
     print('# **________________________________________________________________________________________________________________________________________________**',file=doc)
     print('# **________________________________________________________________________________________________________________________________________________**',file=doc)
-    t=t-1
+    page=page-1
+
 doc.close()
-print('导出完成，请打开weekplan.md查看')
-input('按任意键关闭此程序')
+sg.popup('导出完成，请打开weekplan.md查看')
 #end

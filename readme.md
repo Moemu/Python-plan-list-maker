@@ -53,6 +53,14 @@ Plan list maker是基于Python的免费开源软件，其作用是制作一个�
 
 适用于电脑配置一般，且有自定义需求的用户（GUI界面，支持标题更改，句子来源选择，页数选择）
 
+注意：您需要安装下列库，否则您可能无法运行`makingpro.py`（makingpro.exe除外）：
+在命令行输入：
+
+```
+pip install PySimpleGUI
+pip install requests
+```
+
 运行`makingpro.py`或`makingpro.exe`，按指示输入设置项
 
 随后的操作和普通版类似

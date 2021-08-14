@@ -44,7 +44,7 @@ layout=[[sg.Text('1*.请输入自定义标题，输入格式参阅readme.md(不�
         sg.Radio('自定义句子(sen.txt)', group_id=1)],
         [sg.Button('提交')]]
 
-event,value=sg.Window('Plan list making(GUI)').Layout(layout).Read() #启动GUI并获取值
+event,value=sg.Window('Plan list making(GUI)',icon='LOGO.ico').Layout(layout).Read() #启动GUI并获取值
 
 #获取标题
 tit=value[0]
@@ -91,5 +91,5 @@ while (page > 0):
     page=page-1
 
 doc.close()
-sg.popup('导出完成，请打开weekplan.md查看')
+sg.popup('导出完成，请打开weekplan.md查看',icon='LOGO.ico')
 #end

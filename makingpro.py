@@ -1,7 +1,8 @@
 #By WhitemuTeam
-#Ver: 3.0(Pro)
+#Ver: 3.1(Pro)
 #初始化
 week=0 
+import time
 import PySimpleGUI as sg
 
 #一言句子获取（随机分类）
@@ -28,9 +29,6 @@ def txt():
         txt()
     else:
         return data.strip() 
-      
-if __name__ == '__main__':
-        sen = txt()
 
 sg.theme('SystemDefaultForReal') #这是PysimpleGUI的主题之一，如果您不喜欢此主题，请参阅 https://blog.csdn.net/gainiu/article/details/113808314 查看其他主题
 
@@ -64,6 +62,7 @@ while (page > 0):
     week=week+1
     if way==True:
         sen=hitokoto()
+        time.sleep(0.3)
     else:
         sen=txt()
     print('# ',tit ,week,file=doc) #标题（默认为Week，可更改为Day，例如:'#Day ',week）

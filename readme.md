@@ -1,5 +1,7 @@
 # Plan list maker
 
+注意：我们将在5.0版本移除making.py，源makingpro.py将代替making.py
+
 ## 介绍
 
 Plan list maker是基于Python的免费开源软件，其作用是制作一个精简的计划清单，如图所示：
@@ -102,6 +104,10 @@ print('# Day ',week,file=doc) #标题（默认为Week，可更改为Day，例如
 内置30个句子，来源于各大影视作品，整合来源：一言
 
 如果想添加更多名言警句，可以更改`sen.txt`，直接新建一行输入您的句子即可（一句一行，注意长度不要太多）
+
+## page.py
+
+这是一个存放框架的Py文件，里面内置两个框架可供使用（仅供Pro版）
 
 ## 示例：
 

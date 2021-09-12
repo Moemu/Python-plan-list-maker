@@ -6,7 +6,7 @@
 
 Plan list maker是基于Python的免费开源软件，其作用是制作一个精简的计划清单，如图所示：
 
-![Planpaper](https://cdn.jsdelivr.net/gh/WhitemuTeam/web-img/planpaper.png)
+![框架1](https://cdn.jsdelivr.net/gh/WhitemuTeam/web-img/planpaper.png)
 
 该Planning list包含：
 
@@ -109,6 +109,10 @@ print('# Day ',week,file=doc) #标题（默认为Week，可更改为Day，例如
 
 这是一个存放框架的Py文件，里面内置两个框架可供使用（仅供Pro版）
 
+![框架1](https://cdn.jsdelivr.net/gh/WhitemuTeam/web-img/planpaper.png)
+
+![框架2](https://i.bmp.ovh/imgs/2021/09/af3a53a26e74ef22.png)
+
 ## 示例：
 
 以下是我本人使用Planning list making制作的计划书：
@@ -117,7 +121,7 @@ print('# Day ',week,file=doc) #标题（默认为Week，可更改为Day，例如
 
 ## 关于：
 
-Planning list making Ver: 3.0
+Planning list making Ver: 5.0
 
 作者:White_mu
 
